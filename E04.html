@@ -7,10 +7,17 @@
     //Se o usuário for "Programador" e trabalhar mais que 8 horas diárias, o programa deverá calcular um adicional de 30% (30/100) na sua remuneração. Apresente também quanto recebe por hora, já com o adicional previsto.
 
     //ENTRADA
-
-
+    const remuneração = Number(prompt(`Informe qual a sua remuneração mensal (salário):`));
+    const cargo = Number(prompt(`Informe qual cargo que ocupa:`).toLowerCase());
+    const horas = Number(prompt(`Informe  quantas horas trabalha por dia:`));
     //PROCESSAMENTO
-
+    if(cargo == "estagiário" && horas <= 6){
+        let Calculo1 = remuneração / 480
+        alert(`Recebe por hora R$${Calculo1}`)
+    }
+    else if{
+        
+    }
 
     //SAÍDA
 

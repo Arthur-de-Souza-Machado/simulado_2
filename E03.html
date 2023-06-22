@@ -1,16 +1,43 @@
 <script>
     //PROBLEMA: Viajar para algum lugar
-    //Peça para o usuário informar para qual estado deseja realizar a viagem. (Rio Grande do Sul-RS ou Minas Gerais-MG). Peça também para informar quantos dias ficará em viagem. O usuário também deverá informar "quantos dinheiros" (R$) possui para gastar na viagem.
+    /*Peça para o usuário informar para qual estado deseja realizar a viagem. (Rio Grande do Sul-RS ou Minas Gerais-MG).
+    Peça também para informar quantos dias ficará em viagem. O usuário também deverá informar "quantos dinheiros" (R$) possui para gastar na viagem.*/
     
     //Considere que o custo diário de viagem para "RS" será de R$ 180,00 (180) e o custo diário de viagem para "MG" será de R$ 210,00 (210).
     
-    //Calcule se o usuário possui dinheiro suficiente para realizar a viagem para o destino que pretende. Se o usuário puder viajar, o programa apresentará a mensagem "Boa viagem" e quantos dias poderá ficar no destino, além de qual será o custo da viagem. Caso não possa viajar o programa apresentará a mensagem "Sem Férias" e também apresentará "quantos dinheiros" (R$) estão faltando para realizar a viagem.
+    /*Calcule se o usuário possui dinheiro suficiente para realizar a viagem para o destino que pretende.
+    Se o usuário puder viajar, o programa apresentará a mensagem "Boa viagem" e quantos dias poderá ficar no destino, além de qual será o custo da viagem.
+    Caso não possa viajar o programa apresentará a mensagem "Sem Férias" e também apresentará "quantos dinheiros" (R$) estão faltando para realizar a viagem.*/
 
     //ENTRADA
-
-
+    const estado = prompt(`Informe para qual estado deseja realizar a viagem. (Rio Grande do Sul-RS ou Minas Gerais-MG):`);
+    const dias = prompt(`Informe quantos dias ficará em viagem.:`);
+    const dinheiro = Number(prompt(`Informe quanto dinheiro (R$) possui para gastar na viagem:`).trim().replace(",", ".").toFixed(2));
     //PROCESSAMENTO
-
+    const Calculo1 = dinheiro / 180
+    const Calculo2 = Calculo1 * 180
+    const Calculo3 = 180 - dinheiro
+    const CalculoA = dinheiro / 210
+    const CalculoB = Calculo1 * 210
+    const CalculoC = 210 - dinheiro
+    if(estado = "RS" && dinheiro > 180 ){
+        alert(`Boa viagem poderá ficar no destino por ${Calculo1} dias o custo da viajem vai ser de R$${Calculo2.toFixed(2)} `)
+    }
+    else if(estado = "RS" && dinheiro < 180){
+        alert(`Sem Férias estão faltando para realizar a viagem R$${Calculo3.toFixed(2)}`)
+    }
+    else{
+        alert(`Caracter invalido`)
+    }
+    if(estado = "MG" && dinheiro > 210 ){
+        alert(`Boa viagem poderá ficar no destino por ${CalculoA} dias o custo da viajem vai ser de R$${CalculoB.toFixed(2)} `)
+    }
+    else if(estado = "RS" && dinheiro < 180){
+        alert(`Sem Férias estão faltando para realizar a viagem R$${CalculoC.toFixed(2)}`)
+    }
+    else{
+        alert(`Caracter invalido`)
+    }
 
     //SAÍDA
 

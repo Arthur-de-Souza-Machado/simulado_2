@@ -5,15 +5,31 @@
     //Melancia: 3 Kg
     //Abacate: 4 Unidades
     //Cebola: 1.1 Kg
-    //Peça para o usuário informar o preço do Kg ou da Unidade de cada um dos produtos que comprou (citados acima) e peça também para o usuário informar quanto dinheiro possui para realizar a compra.
-    //Calcule o custo total dos alimentos e verifique se há dinheiro suficiente para realizar a compra, indicando se sobrará ou faltará dinheiro, e também apresentando qual foi a quantia que sobrou ou faltou para realizar a compra. Apresente também na tela o valor total da compra.
+    /*Peça para o usuário informar o preço do Kg ou da Unidade de cada um dos produtos que comprou (citados acima)
+    e peça também para o usuário informar quanto dinheiro possui para realizar a compra.*/
+    /*Calcule o custo total dos alimentos e verifique se há dinheiro suficiente para realizar a compra, indicando se sobrará ou faltará dinheiro,
+    e também apresentando qual foi a quantia que sobrou ou faltou para realizar a compra. Apresente também na tela o valor total da compra.*/
 
     //ENTRADA
-
+    const mamao = Number(prompt(`Informe o preço do Kg ou da Unidade de cada mamão`).trim().replace(",", "."));
+    const melancia = Number(prompt(`Informe o preço do Kg ou da Unidade de cada melancia`).trim().replace(",", "."));
+    const abacate = Number(prompt(`Informe o preço do Kg ou da Unidade de cada abacate`).trim().replace(",", "."));
+    const cebola = Number(prompt(`Informe o preço do Kg ou da Unidade de cada cebola`).trim().replace(",", "."));
+    const dinheiro = Number(prompt(`Informe quanto dinheiro possui para realizar a compra.`).trim().replace(",", "."));
 
     //PROCESSAMENTO
-
-
+    const Calculo1 = mamao * 5 + melancia * 3 + abacate * 4 + cebola * 1.1
+    const Calculo2 = dinheiro - Calculo1
+    const Calculo3 = Calculo1 - dinheiro
+    if (dinheiro > Calculo1){
+        alert(`O valor total da compra foi de R$${Calculo1.toFixed(2)} e sobrará dinheiro no valor de R$${Calculo2.toFixed(2)}`);
+    }
+    else if (dinheiro < Calculo1){
+        alert(`O valor total da compra foi de R$${Calculo1.toFixed(2).replace(".",",")} e faltará dinheiro no valor de R$${Calculo3.toFixed(2).replace(".",",")}`);
+    }
+    else{
+        alert(`Caracter invalido`)
+    }
     //SAÍDA
 
 </script>
